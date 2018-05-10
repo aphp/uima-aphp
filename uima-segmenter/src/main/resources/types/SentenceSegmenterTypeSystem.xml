@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>fr.aphp.wind.uima.ctakes.CtakesDefinitionTypeSystem</name>
+    <imports>
+        <import name="org.apache.uima.ruta.engine.BasicTypeSystem"/>
+    </imports>
+    <types>
+        <typeDescription>
+            <name>fr.aphp.wind.uima.ctakes.CtakesDefinition.WindowInterestSentence</name>
+            <description>Type defined in fr.aphp.wind.uima.ctakes.CtakesDefinition</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

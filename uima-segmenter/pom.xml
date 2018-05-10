@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>fr.aphp.wind.uima</groupId>
+		<artifactId>uima-aphp</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>fr.aphp.wind.uima</groupId>
+	<artifactId>uima-segmenter</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>uima-segmenter</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<!-- ADD IN CASE EXPORT HUGE JAR -->
+						 <goals> 
+						 <goal>shade</goal> 
+						 </goals> 
+						<configuration>
+							<transformers>
+								<!-- Set the main class of the executable JAR -->
+								<!--	<transformer-->
+								<!--	<transf	implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+								<!--	<transf	<mainClass>fr.aphp.wind.uima.segmenter.apps.App</mainClass>-->
+								<!--	<transf</transformer>-->
+								<!-- Merge the uimaFIT configuration files -->
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>
+										META-INF/org.apache.uima.fit/fsindexes.txt
+									</resource>
+								</transformer>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>
+										META-INF/org.apache.uima.fit/types.txt
+									</resource>
+								</transformer>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>
+										META-INF/org.apache.uima.fit/typepriorities.txt
+									</resource>
+								</transformer>
+							</transformers>
+							<!-- Prevent huge shaded artifacts from being deployed to a Maven 
+								repository (remove if not desired) -->
+							<outputFile>
+								${project.build.directory}/${artifactId}-${version}-standalone.jar
+							</outputFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+	</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+			<dependency>
+			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+			<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
+		</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>com.github.heideltime</groupId> <artifactId>heideltime</artifactId> 
+			<version>2.2.1</version> </dependency> -->
+
+		<!-- end -->
+		<!-- PREX (approx regex) -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.uima/uimafit-cpe -->
+		<dependency>
+			<groupId>fr.aphp.wind.uima</groupId>
+			<artifactId>uima-type</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
