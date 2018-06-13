@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><dictionary xmlns="http://incubator.apache.org/uima" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="dictionary.xsd">
+<typeCollection>
+<dictionaryMetaData 
+	caseNormalization="true" 
+	multiWordEntries="true"
+	multiWordSeparator="special"
+	/>
+<languageId>en</languageId>
+<typeDescription>
+<typeName>fr.aphp.wind.uima.type.dict2</typeName>
+</typeDescription>
+<entries>
+<entry><key>pLUsîeurs mot</key></entry>
+<entry><key>unmot</key></entry>
+</entries>
+</typeCollection>
+</dictionary>

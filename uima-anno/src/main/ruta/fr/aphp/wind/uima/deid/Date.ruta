@@ -1,0 +1,10 @@
+PACKAGE fr.aphp.wind.uima.deid;
+//PACKAGE fr.aphp.wind.uima.ruta;
+IMPORT * FROM types.NoteDeidTypeSystem;
+IMPORT de.unihd.dbs.uima.types.heideltime.Sentence FROM types.NoteDeidTypeSystem;
+"Dr" COMMA PERIOD CW CAP* {-> MARK(GeneralFirstName,3,3)};
+"Dr" CW CAP* {-> GeneralFirstName, MARK(GeneralLastName,1,1)};
+(W{REGEXP("Nico.*")}) CW* {-> MARK(de.unihd.dbs.uima.types.heideltime.Sentence,1,1) };
+//de.unihd.dbs.uima.types.heideltime.Sentence{CONTAINS(CW) -> LOG("toto")};
+(GeneralFirstName & GeneralLastName){CONTAINS(CW) -> LOG("toto"), LOG("titi")};
+"Bilan" W {-> MARK(GeneralLastNameChunk,2,2)};
