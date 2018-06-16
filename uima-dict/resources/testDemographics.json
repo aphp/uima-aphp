@@ -1,0 +1,12 @@
+[
+	 {"type": "org.apache.uima.type.PatientFirstName", "values":[{"value":"toto","dataType":"String"}, {"value":"tata","dataType":"String"}]}
+	,{"type": "org.apache.uima.type.PatientLastName", "values":[{"value":"Paris","dataType":"String"}, {"value":"Babar","dataType":"String"}]}
+	,{"type": "org.apache.uima.type.PatientNbIpp", "values":[{"value":"Paris","dataType":"String"}, {"value":"Babar","dataType":"String"}]}
+	,{"type": "org.apache.uima.type.PatientBirthDate", "values":[{"value":"Paris","dataType":"Date"}]}
+	,{"type": "org.apache.uima.type.PatientDeathDate", "values":[{"value":"Paris","dataType":"Date"}]}
+	,{"type": "org.apache.uima.type.PatientZipCodeLive", "values":[{"value":"Paris","dataType":"Date"}]}
+	,{"type": "org.apache.uima.type.PatientCityLive", "values":[{"value":"Paris","dataType":"Date"}]}
+	,{"type": "org.apache.uima.type.PatientStreetNameLive", "values":[{"value":"Paris","dataType":"Date"}]}
+	,{"type": "org.apache.uima.type.PatientPhoneNumber", "values":[{"value":"Paris","dataType":"Date"}]}
+	,{"type": "org.apache.uima.type.PatientNbNda", "values":[{"value":"Paris","dataType":"Date"}]}
+]
