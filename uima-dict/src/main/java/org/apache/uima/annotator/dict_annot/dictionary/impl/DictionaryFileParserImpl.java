@@ -92,6 +92,7 @@ public class DictionaryFileParserImpl implements DictionaryFileParser {
     Boolean multiWordEntries = getBooleanValue(config, "multiWord");
     String multiWordSeparator = getValue(config, "multiWordSeparator");
     Boolean accentNormalization = getBooleanValue(config, "accentNormalization");
+    String snowballStemmer = getValue(config, "snowballStemmer");
     HashSet<String> stopWords =
         new HashSet<String>(Arrays.asList(getValue(config, "stopWords").split("\\|")));
 
@@ -101,7 +102,7 @@ public class DictionaryFileParserImpl implements DictionaryFileParser {
 
     // set dictionary properties
     dictBuilder.setDictionaryProperties(language, typeName, caseNormalization, multiWordEntries,
-        multiWordSeparator, accentNormalization, stopWords);
+        multiWordSeparator, accentNormalization, stopWords, snowballStemmer);
 
     // get dictionary entries and add process them with the dictionary builder
     EntriesDocument.Entries entries = typeCollection.getEntries();

@@ -38,11 +38,13 @@ public class HashMapDictionaryBuilder implements DictionaryBuilder {
 
   private HashSet<String> stopWords;
 
+  private String snowballStemmer;
+
   /**
    * Default constructor. Creates a new HashMap dictionary with case normalization.
    */
   public HashMapDictionaryBuilder() {
-    this.dictionary = new HashMapDictionary(true, true, stopWords);
+    this.dictionary = new HashMapDictionary(true, true, stopWords, snowballStemmer);
     // initialize the default separator character with a space character
     this.multiWordSeparator = " ";
   }
@@ -65,11 +67,12 @@ public class HashMapDictionaryBuilder implements DictionaryBuilder {
    */
   public void setDictionaryProperties(String language, String typeName, boolean caseNormalization,
       boolean multiWordEntries, String multiWordSeparator, boolean accentNormalization,
-      HashSet<String> stopWords) {
+      HashSet<String> stopWords, String snowballStemmer) {
 
     // create a new dictionary if the settings changed.
     // if (!caseNormalization) {
-    this.dictionary = new HashMapDictionary(caseNormalization, accentNormalization, stopWords);
+    this.dictionary =
+        new HashMapDictionary(caseNormalization, accentNormalization, stopWords, snowballStemmer);
     // }
 
     this.dictionary.setDictionaryLanguage(language);
@@ -77,6 +80,7 @@ public class HashMapDictionaryBuilder implements DictionaryBuilder {
     this.createMultiWordEntries = multiWordEntries;
     this.accentNormalization = accentNormalization;
     this.stopWords = stopWords;
+    this.snowballStemmer = snowballStemmer;
     // set multi-word separator
     if (multiWordSeparator != null) {
       this.multiWordSeparator = multiWordSeparator;

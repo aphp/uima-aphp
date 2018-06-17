@@ -17,7 +17,8 @@ import org.xml.sax.SAXException;
 import de.tudarmstadt.ukp.dkpro.core.io.brat.BratWriter;
 import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordSegmenter;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Compound;
+import opennlp.tools.stemmer.snowball.SnowballStemmer;
+import opennlp.tools.stemmer.snowball.SnowballStemmer.ALGORITHM;
 
 public class DictionaryAnnotatorTest {
 
@@ -94,7 +95,16 @@ public class DictionaryAnnotatorTest {
                 , bratWriter
             //  , conllWriter
                 );
-  
+        // @formatter:on
+
+  }
+
+  @Test
+  public void testStemmer() {
+    SnowballStemmer a = new SnowballStemmer(ALGORITHM.FRENCH);
+    CharSequence b = a.stem("maladivement");
+    System.out.println(b);
+    assert ("malad".equals(b));
   }
 
 }
