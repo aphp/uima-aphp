@@ -17,7 +17,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<uima-version>2.10.2</uima-version>
-		<dkpro-version>1.8.0</dkpro-version>
+		<dkpro-version>1.10.0</dkpro-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -272,15 +272,22 @@
 
 		<dependency>
 			<groupId>fr.aphp.wind.uima</groupId>
+			<artifactId>uima-segmenter</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>fr.aphp.wind.uima</groupId>
 			<artifactId>uima-core</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>fr.aphp.wind.uima</groupId>
-			<artifactId>uima-type</artifactId>
+			<artifactId>uima-segmenter</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+		
 
 		<dependency>
 			<groupId>org.apache.uima</groupId>
@@ -292,6 +299,13 @@
 			<groupId>org.apache.uima</groupId>
 			<artifactId>uimaj-core</artifactId>
 			<version>${uima-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.univocity</groupId>
+			<artifactId>univocity-parsers</artifactId>
+			<version>2.6.3</version>
+			<type>jar</type>
 		</dependency>
 
 	</dependencies>

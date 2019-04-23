@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><dictionary xmlns="http://incubator.apache.org/uima" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="dictionary.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary xmlns="http://incubator.apache.org/uima" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="dictionary.xsd">
 <typeCollection>
-<dictionaryMetaData 
-	caseNormalization="true" 
-	multiWordEntries="true"
-	multiWordSeparator="special"
-	/>
-<languageId>en</languageId>
+<dictionaryMetaData caseNormalization="true" multiWordEntries="true" multiWordSeparator="caseSensitive='true';multiWord='true';multiWordSeparator=' ';accentNormalization='true';snowballStemmer='french';stopWords='de|le'"/>
 <typeDescription>
 <typeName>fr.aphp.wind.uima.type.dict2</typeName>
 </typeDescription>
 <entries>
-<entry><key>pLUsîeurs mot</key></entry>
-<entry><key>unmot</key></entry>
+<entry>
+<key>Hello world</key>
+</entry>
+<entry>
+<key>d&apos; accord</key>
+</entry>
+<entry>
+<key>étylotest</key>
+</entry>
 </entries>
 </typeCollection>
 </dictionary>
