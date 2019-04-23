@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><dictionary xmlns="http://incubator.apache.org/uima" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="dictionary.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary xmlns="http://incubator.apache.org/uima" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="dictionary.xsd">
 <typeCollection>
-<dictionaryMetaData 
-	caseNormalization="true" 
-	multiWordEntries="true"
-	multiWordSeparator="caseSensitive='true';multiWord='true';multiWordSeparator=' ';accentNormalization='true';stopWords='de|le'"
-	/>
-<languageId>en</languageId>
+<dictionaryMetaData caseNormalization="true" multiWordEntries="true" multiWordSeparator="caseSensitive='true';multiWord='null';multiWordSeparator=' ';accentNormalization='true';snowballStemmer='french';stopWords='de|le'"/>
 <typeDescription>
 <typeName>de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Compound</typeName>
 </typeDescription>
 <entries>
-<entry><key>bonjour tristesse</key></entry>
-<entry><key>nuâges passes</key></entry>
+<entry>
+<key>Hello world</key>
+</entry>
+<entry>
+<key>d&apos; accord</key>
+</entry>
 </entries>
 </typeCollection>
 </dictionary>

@@ -117,10 +117,10 @@ public class DictionaryFileParserImpl implements DictionaryFileParser {
 
   private String getValue(String config, String value) {
 
-    Pattern pat = Pattern.compile(value + "='(.*?)';?");
+    Pattern pat = Pattern.compile(value + "=[^']+'(.*?)'[^']+;?");
     Matcher m = pat.matcher(config);
     m.find();
-    return m.group(1);
+    return m.group(1).replaceAll("''", "'");
   }
 
   private Boolean getBooleanValue(String config, String value) {

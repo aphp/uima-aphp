@@ -158,7 +158,6 @@ public class DictionaryAnnotator extends CasAnnotator_ImplBase {
       // iterate over the annotation array and detect matches
       int currentPos = 0;
       while (currentPos < annotFSsTmp.length) {
-        logger.log(Level.INFO, "Looking at:" + annotFSsTmp[currentPos].getCoveredText());
         // check for dictionary matches at the current token position
         DictionaryMatch dictMatch =
             this.dictionaries[i].matchEntry(currentPos, annotFSsTmp, this.inputMatchFeaturePath);
@@ -176,7 +175,7 @@ public class DictionaryAnnotator extends CasAnnotator_ImplBase {
           int start = annotFSsTmp[currentPos].getBegin();
           int end = annotFSsTmp[currentPos + matchLength - 1].getEnd();
           FeatureStructure fs = cas.createAnnotation(currentDictOutputType, start, end);
-          logger.log(Level.INFO, "Found :" + CasTools.getTextContent(fs));
+          //logger.log(Level., "Found :" + CasTools.getTextContent(fs));
           // add annotation to the CAS
           cas.getIndexRepository().addFS(fs);
           // adjust current array position, add match length
@@ -311,6 +310,7 @@ public class DictionaryAnnotator extends CasAnnotator_ImplBase {
     // parse dictionary files
     ArrayList<Dictionary> dicts = new ArrayList<Dictionary>();
     for (int i = 0; i < dictionaryFileNames.length; i++) {
+      logger.log(Level.INFO, "Loaded dictionary:" + dictionaryFileNames[i]);
       // try to resolve the relative file name with classpath or datapath
       DictionaryFile file = resolveRelativeFilePath(dictionaryFileNames[i], datapathElements);
 
