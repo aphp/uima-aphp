@@ -16,6 +16,6 @@
    <!-- <module>uima-deid</module>  -->
    <!-- <module>uima-ctakes</module> -->
     <module>uima-segmenter</module>
-    <!--   <module>uima-evaluator</module>
+    <!--   <module>uima-evaluator</module-->
   </modules> 
 </project>
